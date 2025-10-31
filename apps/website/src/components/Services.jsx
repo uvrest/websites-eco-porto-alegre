@@ -1,10 +1,9 @@
-import { Container, Box, Grid, Paper, Typography } from "@mui/material";
+import { Container, Grid, Typography, Card, CardContent, CardMedia, CardActionArea } from "@mui/material";
 
-const ServiceItem = ({ iconImage, title, description }) => {
+const ServiceItem = ({ image, title, description }) => {
     return (
-        <Paper
+        <Card
             sx={{
-                p: 4,
                 height: "100%",
                 transition: (theme) =>
                     theme.transitions.create(["box-shadow", "transform"], {
@@ -14,52 +13,34 @@ const ServiceItem = ({ iconImage, title, description }) => {
                     transform: "translateY(-4px)",
                     boxShadow: 6,
                 },
-                "& .icon-circle": {
-                    width: 50,
-                    height: 50,
-                    backgroundColor: "primary.main",
-                    position: "absolute",
-                    left: -15,
-                    top: -15,
-                    zIndex: 0,
-                    borderRadius: "50%",
-                    transition: (theme) =>
-                        theme.transitions.create("transform", {
-                            duration: theme.transitions.duration.standard,
-                            easing: theme.transitions.easing.easeInOut,
-                        }),
-                },
-                "&:hover .icon-circle": {
-                    transform: "scale(1.2)",
-                },
             }}
         >
-            <Box sx={{ position: "relative" }}>
-                <Box className="icon-circle" />
-                <Box
+            <CardActionArea>
+                <CardMedia
                     component="img"
-                    src={iconImage}
-                    height={54}
-                    sx={{ position: "relative", zIndex: 1 }}
+                    height="240"
+                    image={image}
+                    alt={title}
                 />
-            </Box>
-
-            <Typography component="h3" variant="h5" color="primary" sx={{ mb: 1 }}>
-                {title}
-            </Typography>
-            <Typography variant="body1">{description}</Typography>
-        </Paper>
+                <CardContent sx={{ p: 4 }}>
+                    <Typography component="h3" variant="h5" color="primary" sx={{ mb: 1 }}>
+                        {title}
+                    </Typography>
+                    <Typography variant="body2">{description}</Typography>
+                </CardContent>
+            </CardActionArea>
+        </Card>
     )
 }
 
 const Services = ({ items = [] }) => {
     return (
         <Container maxWidth="xl">
-            <Grid container spacing={1}>
+            <Grid container spacing={3}>
                 {items.map((service) => {
                     return (
                         <Grid key={service.id} size={{ xs: 12, md: 4 }}>
-                            <ServiceItem iconImage={service.iconImage} title={service.title} description={service.description} />
+                            <ServiceItem image={service.image} title={service.title} description={service.description} />
                         </Grid>
                     )
                 })}
