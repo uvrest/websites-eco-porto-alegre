@@ -1,5 +1,5 @@
-import { Container, Box, Typography, Button, Divider, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
-import { Instagram, CheckRounded } from "@mui/icons-material";
+import { Container, Box, Typography, Button } from "@mui/material";
+import { Instagram } from "@mui/icons-material";
 import AboutCard from "@website/components/AboutCard";
 import { socialData } from "@website/app/config/contactInfo";
 import aboutImge from "@website/assets/images/leak-detection.jpg";
