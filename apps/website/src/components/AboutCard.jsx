@@ -4,7 +4,23 @@ const AboutCard = ({ image, title, overline, children }) => {
     return (
         <Grid container spacing={4} alignItems='center'>
 
-            <Grid size={{ xs: 12, md: 5 }} offset={{ md: 1 }}>
+            <Grid size={{ xs: 12, md: 6 }}>
+
+                {/* Texto */}
+                <Box sx={{ flex: 1 }}>
+                    <Typography variant="overline" color="primary">
+                        {overline}
+                    </Typography>
+                    <Typography variant="h3" sx={{ mb: 2, fontWeight: 700 }}>
+                        {title}
+                    </Typography>
+                    <Box>
+                        {children}
+                    </Box>
+                </Box>
+            </Grid>
+
+            <Grid size={{ xs: 12, md: 6 }}>
                 {/* Foto */}
                 <Box
                     component="img"
@@ -16,25 +32,6 @@ const AboutCard = ({ image, title, overline, children }) => {
                         boxShadow: 3,
                     }}
                 />
-            </Grid>
-
-            <Grid size={{ xs: 12, md: 5 }}>
-
-                {/* Texto */}
-                <Box sx={{ flex: 1 }}>
-
-                    <Typography variant="overline" color="primary">
-                        {overline}
-                    </Typography>
-
-                    <Typography variant="h3" sx={{ mb: 2, fontWeight: 700 }}>
-                        {title}
-                    </Typography>
-
-                    <Box>
-                        {children}
-                    </Box>
-                </Box>
             </Grid>
 
         </Grid >

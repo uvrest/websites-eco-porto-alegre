@@ -1,26 +1,24 @@
-import { Container, Box, Typography, Button } from "@mui/material";
-import { Instagram } from "@mui/icons-material";
+import { Container, Box, Typography, Button, Divider, List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
+import { Instagram, CheckRounded } from "@mui/icons-material";
 import AboutCard from "@website/components/AboutCard";
 import { socialData } from "@website/app/config/contactInfo";
+import aboutImge from "@website/assets/images/leak-detection.jpg";
 
 const AboutContent = () => {
     return (
         <Box>
-            <Typography component="p" variant="body1" sx={{ mb: 2 }}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2, }}>
+                A Eco Porto Alegre é uma empresa especializada em desentupimentos, serviços hidráulicos, caça-vazamentos,
+                dedetização e limpa fossa, oferecendo soluções completas para residências, comércios e indústrias.
+                Atuamos com tecnologia moderna e equipe qualificada, garantindo atendimento ágil, seguro e eficiente em
+                toda Porto Alegre e Região Metropolitana.
             </Typography>
 
-            <Typography
-                variant="body2"
-                sx={{ mb: 2, fontStyle: "italic", color: "text.secondary" }}
-            >
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-            </Typography>
-
-            <Typography variant="subtitle2" color="primary.main" sx={{ mb: 3 }}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 2, }}>
+                Comprometida com a responsabilidade ambiental, a Eco Porto Alegre utiliza métodos sustentáveis e equipamentos
+                que reduzem o impacto ao meio ambiente, sem abrir mão da qualidade e precisão no serviço prestado. Nosso atendimento 24
+                horas está sempre pronto para atender emergências e proporcionar tranquilidade aos nossos clientes, com transparência,
+                confiança e respeito.
             </Typography>
 
             <Button
@@ -34,7 +32,7 @@ const AboutContent = () => {
                     background: "linear-gradient(45deg, #833AB4, #FD1D1D, #FCB045)",
                 }}
             >
-                Me siga no Instagram
+                Siga-nos no Instagram
             </Button>
         </Box>
     )
@@ -42,12 +40,12 @@ const AboutContent = () => {
 
 const AboutSection = () => {
     return (
-        <Box id="sobre" sx={{ py: 6, backgroundColor: "background.paper" }}>
-            <Container maxWidth="xl">
+        <Box id="sobre" sx={{ py: 6, backgroundColor: "background.default" }}>
+            <Container maxWidth="lg">
                 <AboutCard
-                    image="/placeholders/400x550.jpg"
-                    title="About Section"
-                    overline="Uverest"
+                    image={aboutImge}
+                    title="Atendimento especializado e responsabilidade ambiental"
+                    overline="Sobre a Eco Porto Alegre"
                 >
                     <AboutContent />
                 </AboutCard>
