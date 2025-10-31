@@ -36,9 +36,9 @@ const NavigationButton = ({
                 sx={(theme) => ({
                     position: "relative",
                     fontWeight: 500,
-                    fontSize: { xs: "1rem", md: "0.95rem" },
+                    fontSize: { xs: "1rem", md: "1rem" },
                     opacity: 0.72,
-                    color: theme.palette.text.primary,
+                    color: theme.palette.primary.contrastText,
                     textTransform: "none",
                     display: "inline-flex",
                     alignItems: "center",
@@ -46,7 +46,7 @@ const NavigationButton = ({
                     px: 0.8,
                     "&.active": {
                         opacity: 1,
-                        color: theme.palette.primary.dark,
+                        color: theme.palette.secondary.main,
                         "&::after": {
                             content: '""',
                             position: "absolute",
@@ -55,12 +55,12 @@ const NavigationButton = ({
                             height: 2,
                             bottom: 0,
                             left: 0,
-                            bgcolor: theme.palette.primary.light,
+                            bgcolor: theme.palette.secondary.main,
                         },
                     },
                     "&:hover": {
                         opacity: 1,
-                        color: theme.palette.primary.main,
+                        color: theme.palette.secondary.main,
                     },
                 })}
                 {...rest}
@@ -120,20 +120,7 @@ const NavbarMenu = ({ navItems }) => {
         <Stack
             direction="row"
             alignItems="center"
-            sx={{
-                "& > *:not(:last-child)::after": {
-                    content: '"•"',
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    mx: 0.5,
-                    color: "text.primary",
-                    fontSize: "1.35rem",
-                    position: "relative",
-                    top: "-1px", // pequeno ajuste óptico opcional
-                },
-            }}
-            spacing={0}
+            spacing={2}
         >
             <NavigationMenu
                 items={navItems}

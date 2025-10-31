@@ -16,7 +16,7 @@ export default function getThemeOptions(mode = 'light') {
         typography,
         breakpoints,
         shape,
-        spacing: 8, // opcional (MUI já assume 8)
+        spacing: 8, // opcional (MUI default: 8)
         transitions,
         components,
     };

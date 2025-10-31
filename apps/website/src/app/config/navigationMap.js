@@ -5,7 +5,7 @@ export const navigationMap = {
         { label: "Sobre", to: "/sobre" },
         {
             label: "Serviços",
-            to: "/servicos",
+            to: "#",
             submenu: [
                 { label: "Serviço 1", to: "/servico-1" },
                 { label: "Serviço 2", to: "/servico-2" },

@@ -8,6 +8,7 @@ import DrawerMenu from "./DrawerMenu";
 import { navigationMap } from "@website/app/config/navigationMap";
 import { useAppThemeContext } from "@website/app/providers/AppThemeProvider";
 import Brand from "@website/components/brand/Brand";
+import { useScrolled } from "@uverest/shared/hooks";
 
 const Header = () => {
 
@@ -15,6 +16,7 @@ const Header = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
     const { resolvedMode } = useAppThemeContext();
+    const scrolled = useScrolled(150);
 
     return (
         <>
@@ -22,11 +24,12 @@ const Header = () => {
                 position="fixed"
                 elevation={0}
                 sx={{
-                    backgroundColor: theme.palette.primary.main,
+                    transition: `all ${theme.transitions.duration.standard} ease-in-out`,
+                    backgroundColor: !scrolled ? 'transparent' : theme.palette.primary.dark,
                 }}
             >
-                <Container maxWidth="xl">
-                    <Toolbar disableGutters sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <Container maxWidth="lg">
+                    <Toolbar disableGutters sx={{ display: "flex", alignItems: "center", gap: 2 }}>
 
                         {/* Logo */}
                         <Box sx={{ display: "flex", flex: 1, alignItems: "center", py: 1 }}>
@@ -35,7 +38,7 @@ const Header = () => {
                                 to="/"
                                 sx={{ display: "flex", alignItems: "center" }}
                             >
-                                <Brand height={isMobile ? 70 : 70} src={resolvedMode === 'light' ? "brand/logo-dk.svg" : "brand/logo-white.svg"} />
+                                <Brand height={isMobile ? 70 : 70} src={resolvedMode === 'light' ? "brand/logo-wt.png" : "brand/logo-wt.png"} />
                             </Box>
                         </Box>
 
@@ -43,7 +46,7 @@ const Header = () => {
                         {!isMobile && <NavbarMenu navItems={navigationMap.main} />}
 
                         {/** CTA Agendar consulta */}
-                        {!isMobile && <Button variant="outlined" endIcon={<CalendarTodayRounded />}>Agendar Consulta</Button>}
+                        {!isMobile && <Button variant="contained" color="secondary" endIcon={<CalendarTodayRounded />}>Orçamento</Button>}
 
                         {/* Switch e Drawer toggle */}
                         <ColorModeSwitch />

@@ -1,61 +1,124 @@
-import { Box } from "@mui/material";
-import { grey } from "@mui/material/colors";
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import HeroSlider from "@uverest/design-system/organisms/hero/HeroSlider";
+import { alpha, darken, Container, Box, Stack, Typography } from "@mui/material";
+import CtaButton from "@uverest/design-system/atoms/CtaButton";
+import { WhatsApp, PlumbingRounded } from '@mui/icons-material';
+import HeroVideo from "@uverest/design-system/organisms/hero/HeroVideo";
+import bgVideo from "@website/assets/videos/poa-1.mp4";
 import { whatsappLinkURL } from "@website/app/config/contactInfo";
 
-const slides = [
-    {
-        id: 1,
-        headLine: {
-            text: "Há 16 anos trazendo empresas para o meio digital",
-            color: "primary.contrastText",
-        },
-        title: {
-            text: "Sistemas Personalizados + Apps + Websites",
-            color: "common.black",
-        },
-        description: {
-            text: `Desenvolvimento de websites e sistemas para internet.`,
-            color: grey[900],
-        },
-        img: "/placeholders/1360x650.jpg",
-        ctaPrimary: {
-            label: "Fale Conosco",
-            href: whatsappLinkURL,
-            target: "_blank",
-            variant: "contained",
-            size: "large",
-            endIcon: <WhatsAppIcon />,
-        },
-        ctaSecondary: { label: "Saiba mais", to: "#about" },
-        overlay: null,
-    },
-    {
-        id: 2,
-        headLine: {
-            text: "Venha para o mundo dos apps nativos",
-            color: "primary.main",
-        },
-        title: {
-            text: "Apps nativos para Android e IOS",
-            color: grey[900],
-        },
-        description: {
-            text: "Transforme o seu negócio em um meio digital que caiba na palma da mão de seu cliente.",
-            color: grey[900],
-        },
-        img: "/placeholders/1360x650.jpg",
-        overlay: { color: "light", opacity: 0.7 },
-    }
-];
+const HeroOverlay = () => (
+    <Box
+        sx={(theme) => ({
+            position: "absolute",
+            inset: 0,
+            zIndex: 0,
+            backgroundColor: alpha(theme.palette.primary.main, 0.25),
+            mixBlendMode: "color", // deixa o overlay reagir às cores do vídeo
+        })}
+    />
+);
 
+const HeroOverlayTopEdge = () => (
+    <Box
+        sx={(theme) => ({
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "30%",
+            zIndex: 1,
+            background: `linear-gradient(
+        180deg,
+        ${darken(alpha(theme.palette.primary.dark, 0.9), 0.2)} 0%,
+        ${darken(alpha(theme.palette.primary.dark, 0), 0.2)} 100%
+      )`,
+            mixBlendMode: "darken",
+        })}
+    />
+);
+
+const HeroOverlayBottomEdge = () => (
+    <Box
+        sx={(theme) => ({
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            height: "45%",
+            zIndex: 1,
+            background: `linear-gradient(
+        0deg,
+        ${darken(alpha(theme.palette.primary.dark, 0.9), 0.2)} 0%,
+        ${darken(alpha(theme.palette.primary.dark, 0), 0.2)} 100%
+      )`,
+            mixBlendMode: "color",
+        })}
+    />
+);
+
+// Vinheta suave nos cantos
+const HeroVignette = () => (
+    <Box
+        sx={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 2,
+            background:
+                "radial-gradient(circle at center, rgba(0,0,0,0) 60%, rgba(0,0,0,0.35) 100%)",
+            pointerEvents: "none",
+        }}
+    />
+);
+
+const HeroContent = () => (
+    <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2, height: "100%", display: "flex", }}>
+
+        <Box sx={{ mt: "auto", mb: 8, }}>
+
+            <Typography variant="body1" color="common.white" sx={{ maxWidth: "65%" }}>
+                Soluções rápidas e eficientes em desentupimentos e caça-vazamentos, com equipe especializada e atendimento em toda Porto Alegre e região metropolitana.
+            </Typography>
+            <Typography variant="h1" component="h2" color="primary.contrastText" sx={{ fontSize: "4.75rem", textTransform: "uppercase" }}>
+                Desentupimentos e Caça Vazamentos
+            </Typography>
+            <Stack direction="row" spacing={2} mt={2}>
+                <CtaButton
+                    label="Faça um Orçamento"
+                    variant="contained"
+                    color="success"
+                    size="large"
+                    icon={<WhatsApp />}
+                    href={whatsappLinkURL}
+                    target="_blank"
+                />
+                <CtaButton
+                    label="Nossos Serviços"
+                    variant="outlined"
+                    size="large"
+                    icon={<PlumbingRounded />}
+                    sx={{
+                        border: "1px solid #f9f9f9",
+                        color: "#f9f9f9",
+                    }}
+                    to="/servicos"
+                />
+            </Stack>
+
+        </Box>
+
+    </Container>
+);
 
 const HeroSection = () => {
 
     return (
         <Box component='section' id="home">
-            <HeroSlider slides={slides} />
+            <HeroVideo videoPath={bgVideo} height={{ xs: "90dvh", md: "95dvh" }}>
+                <HeroOverlay />
+                <HeroOverlayTopEdge />
+                <HeroOverlayBottomEdge />
+                <HeroVignette />
+                <HeroContent />
+            </HeroVideo>
         </Box>
     )
 }

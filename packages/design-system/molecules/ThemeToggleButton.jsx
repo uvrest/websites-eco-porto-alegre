@@ -9,10 +9,11 @@ const ThemeToggleButton = ({
     size = "medium",
     edge = false,
     withTooltip = true,
+    sx,
 }) => {
 
     const button = (
-        <IconButton onClick={onToggle} aria-label={label} size={size} edge={edge ? "end" : false}>
+        <IconButton onClick={onToggle} aria-label={label} size={size} edge={edge ? "end" : false} sx={sx}>
             {mode === "light" ? <DarkModeIcon /> : <LightModeIcon />}
         </IconButton>
     );

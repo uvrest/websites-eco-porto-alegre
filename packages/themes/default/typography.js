@@ -1,6 +1,6 @@
 // src/theme/typography.js
-const headingFont = `'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif`;
-const bodyFont = `'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif`;
+const headingFont = `"Geologica", sans-serif;`;
+const bodyFont = `"Geologica", sans-serif;`;
 
 const typography = {
     fontFamily: bodyFont,

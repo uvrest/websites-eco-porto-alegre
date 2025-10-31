@@ -1,12 +1,11 @@
 import { Container, Grid, Box, Typography } from "@mui/material";
-import { grey } from "@mui/material/colors";
 
 const FeatureItem = ({ description, Icon }) => {
     return (
         <Box
             display='flex'
             sx={{
-                background: 'transparent',
+                background: "#F9F9F9",
                 height: '100%',
                 alignItems: 'center',
                 gap: 2,
@@ -16,7 +15,7 @@ const FeatureItem = ({ description, Icon }) => {
             <Box>
                 {<Icon fontSize="large" color="primary" aria-hidden />}
             </Box>
-            <Typography component='span' color={grey[200]}>{description}</Typography>
+            <Typography component='span'>{description}</Typography>
         </Box>
     )
 }
@@ -27,7 +26,7 @@ const Features = ({ items = [] }) => {
             <Container maxWidth="xl">
                 <Grid container spacing={2}>
                     {items.map((feature) => (
-                        <Grid size={{ xs: 12, md: 3 }} key={feature.id}>
+                        <Grid size={{ xs: 12, md: 4 }} key={feature.id}>
                             <FeatureItem {...feature} />
                         </Grid>
                     ))}

@@ -10,7 +10,7 @@ const makeColor = (mainColor, contrastText = '#fff') => ({
 
 const lightText = {
     primary: '#111827',
-    secondary: 'rgba(0,0,0,0.6)',
+    secondary: 'rgba(0,0,0,0.5)',
 };
 
 const darkText = {
@@ -21,9 +21,9 @@ const darkText = {
 export default {
     light: {
         mode: 'light',
-        primary: makeColor('#C42847'),
-        secondary: makeColor('#37517C'),
-        neutral: makeColor('#2C3449'), // it was "tertiary"
+        primary: makeColor('#1736ff'),
+        secondary: makeColor('#EF5D42'),
+        neutral: makeColor('#2C3449'),
         background: { default: '#FCF1F3', paper: '#FBF5F3' },
         text: lightText,
         divider: 'rgba(0,0,0,0.12)',

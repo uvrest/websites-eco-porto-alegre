@@ -11,7 +11,6 @@ const FeaturesSection = () => {
         { id: 1, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", Icon: WorkspacePremiumOutlinedIcon },
         { id: 2, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", Icon: CampaignRoundedIcon },
         { id: 3, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", Icon: LocalDiningRoundedIcon },
-        { id: 4, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", Icon: SpaRoundedIcon },
     ];
 
     return (
