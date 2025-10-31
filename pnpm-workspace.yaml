@@ -1,0 +1,12 @@
+packages:
+  - apps/*
+  - packages/*
+  - tools/*
+
+exclude:
+  - '**/dist'
+  - '**/build'
+  - '**/.next'
+
+onlyBuiltDependencies:
+  - esbuild

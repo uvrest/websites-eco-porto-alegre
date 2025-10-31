@@ -1,0 +1,57 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies & builds
+node_modules
+dist/
+**/dist/
+dist-ssr
+.vite/
+**/.vite/
+
+# Env (mantém apenas os exemplos)
+*.env
+*.env.*
+!**/.env.example
+
+# Caches & misc
+.eslintcache
+.DS_Store
+Thumbs.db
+*.tmp
+tmp/
+.cache/
+.turbo/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Lockfiles (apenas o da raiz é versionado)
+apps/**/package-lock.json
+packages/**/package-lock.json
+tools/**/package-lock.json
+
+apps/**/pnpm-lock.yaml
+packages/**/pnpm-lock.yaml
+tools/**/pnpm-lock.yaml
+
+apps/**/yarn.lock
+packages/**/yarn.lock
+tools/**/yarn.lock
+
+# Tests / Coverage
+coverage/
+*.lcov

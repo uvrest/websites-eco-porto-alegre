@@ -1,0 +1,21 @@
+{
+  "name": "portal",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mui/x-data-grid": "^8.10.2",
+    "@mui/x-date-pickers": "^8.10.2",
+    "browser-image-compression": "^2.0.2",
+    "openrouteservice-js": "^0.4.1",
+    "react-dropzone": "^14.3.8",
+    "recharts": "^3.1.2"
+  },
+  "devDependencies": {}
+}
