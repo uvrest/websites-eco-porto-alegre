@@ -26,12 +26,12 @@ const FaqSection = () => {
         <Box
             sx={(theme) => ({
                 py: 12,
-                backgroundColor: lighten(theme.palette.secondary.main, 0.1),
+                backgroundColor: lighten(theme.palette.primary.dark, 0.1),
             })}
         >
-            <Container maxWidth="xl">
+            <Container maxWidth="lg">
 
-                <SectionTitle title="Perguntas Frequentes" subtitle="FAQ" align="center" />
+                <SectionTitle title="Perguntas Frequentes" subtitle="FAQ" align="center" color="#f0f0f0" supportColor="#D0D0D0" />
 
                 <Grid container spacing={0}>
                     <Grid size={{ xs: 12, md: 8 }} offset={{ md: 2 }}>

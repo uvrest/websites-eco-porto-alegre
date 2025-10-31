@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AppBar, Toolbar, Box, Container, IconButton, useTheme, useMediaQuery, Button } from "@mui/material";
+import { AppBar, Toolbar, Box, Container, IconButton, useTheme, useMediaQuery, Button, alpha } from "@mui/material";
 import { NavLink } from "react-router";
 import { MenuRounded, CalendarTodayRounded } from "@mui/icons-material";
 import ColorModeSwitch from "@website/layout/ColorModeSwitch";
@@ -16,7 +16,7 @@ const Header = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down("md"));
     const { resolvedMode } = useAppThemeContext();
-    const scrolled = useScrolled(150);
+    const scrolled = useScrolled(200);
 
     return (
         <>
@@ -24,8 +24,16 @@ const Header = () => {
                 position="fixed"
                 elevation={0}
                 sx={{
-                    transition: `all ${theme.transitions.duration.standard} ease-in-out`,
-                    backgroundColor: !scrolled ? 'transparent' : theme.palette.primary.dark,
+                    backgroundColor: (theme) =>
+                        !scrolled
+                            ? alpha(theme.palette.primary.dark, 0) // totalmente transparente no topo
+                            : alpha(theme.palette.primary.dark, 0.85), // leve transparência quando rola
+                    backdropFilter: scrolled ? "blur(10px)" : "none", // blur suave ao rolar
+                    WebkitBackdropFilter: scrolled ? "blur(10px)" : "none", // compatibilidade Safari
+                    boxShadow: scrolled ? theme.shadows[3] : "none",
+                    py: !scrolled ? 2 : 0.5,
+                    transition:
+                        "background-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.3s ease",
                 }}
             >
                 <Container maxWidth="lg">

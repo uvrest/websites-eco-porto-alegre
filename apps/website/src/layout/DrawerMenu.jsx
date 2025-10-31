@@ -28,7 +28,7 @@ const DrawerMenu = ({ open, onClose, navItems, anchor = "right" }) => {
                         onClick={() => onClose(false)}
                         style={{ textDecoration: "none" }}
                     >
-                        <Brand height={50} src={resolvedMode === 'light' ? "brand/logo-dk.svg" : "brand/logo-lt.svg"} />
+                        <Brand height={60} src={resolvedMode === 'light' ? "brand/logo-bk.png" : "brand/logo-wt.png"} />
                     </Box>
                 </Box>
 

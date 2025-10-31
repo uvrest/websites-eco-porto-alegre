@@ -4,9 +4,9 @@ const FeatureItem = ({ title, description, Icon }) => {
     return (
         <Stack
             spacing={0}
-            sx={{
+            sx={(theme) => ({
                 position: "relative",
-                backgroundColor: "#F9F9F9",
+                backgroundColor: theme.palette.background.paper,
                 opacity: 1,
                 height: '100%',
                 p: 5,
@@ -19,7 +19,7 @@ const FeatureItem = ({ title, description, Icon }) => {
                     transform: "translateX(0px) translateY(-10px)",
                     boxShadow: "0 0 20px 10px rgba(0,0,0,0.1)",
                 }
-            }}>
+            })}>
             <Box>
                 {<Icon fontSize="large" color="primary" aria-hidden />}
             </Box>
