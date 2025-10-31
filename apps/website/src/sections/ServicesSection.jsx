@@ -49,7 +49,6 @@ const ServicesSection = () => {
         },
     ];
 
-
     return (
         <Box component="section" sx={{ py: 12, backgroundColor: 'background.default' }} id="especialidades">
             <SectionTitle title="Nossos Serviços" subtitle="Como a Eco Porto Alegre pode te ajudar" />
