@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import { setPageMeta } from "@website/utils/setPageMeta";
+import PageHeader from "@website/layout/PageHeader";
+import AboutSection from "@website/sections/AboutSection";
+import ValuesSection from "@website/sections/ValuesSection";
 
 const AboutPage = () => {
 
@@ -11,7 +14,11 @@ const AboutPage = () => {
     }, []);
 
     return (
-        <>About page content</>
+        <>
+            <PageHeader pageTitle="Sobre nós" overline="Saiba mais sobre a Eco Porto Alegre" />
+            <AboutSection />
+            <ValuesSection />
+        </>
     )
 }
 

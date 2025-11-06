@@ -55,3 +55,6 @@ tools/**/yarn.lock
 # Tests / Coverage
 coverage/
 *.lcov
+
+# Client files
+apps/website/public/original

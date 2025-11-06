@@ -34,6 +34,7 @@ const Header = () => {
                     py: !scrolled ? 2 : 0.5,
                     transition:
                         "background-color 0.4s ease, backdrop-filter 0.4s ease, padding 0.3s ease",
+                    height: !scrolled ? 120 : `calc(120 - ${theme.spacing(1)})`,
                 }}
             >
                 <Container maxWidth="lg">

@@ -38,9 +38,9 @@ const AboutContent = () => {
     )
 }
 
-const AboutSection = () => {
+const AboutSection = ({ bgColor = "background.default" }) => {
     return (
-        <Box id="sobre" sx={{ py: 6, backgroundColor: "background.default" }}>
+        <Box id="sobre" sx={{ py: 6, backgroundColor: { bgColor } }}>
             <Container maxWidth="lg">
                 <AboutCard
                     image={aboutImge}
