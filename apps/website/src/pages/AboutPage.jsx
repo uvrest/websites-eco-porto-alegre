@@ -8,8 +8,8 @@ const AboutPage = () => {
 
     useEffect(() => {
         setPageMeta({
-            title: "About",
-            description: "About page Uverest website template."
+            title: "Sobre a Eco Porto Alegre",
+            description: "Saiba mais sobre a Eco Porto Alegre - Desentupidora e Caça Vazamentos."
         });
     }, []);
 

@@ -99,7 +99,7 @@ const NavigationButton = ({
                         <MenuItem
                             key={item.to}
                             component={RouterLink}
-                            to={`/${item.to}`}
+                            to={item.to}
                             onClick={handleClose}
                             sx={{
                                 minWidth: 180,

@@ -1,4 +1,5 @@
 import { Box, Container, Grid, Typography, Divider, Link as MuiLink, Stack } from "@mui/material";
+import { Link } from "react-router";
 import { LocationOn, Phone, Email } from "@mui/icons-material";
 import { env } from "@website/app/config/env";
 import Brand from "@website/components/brand/Brand";
@@ -51,8 +52,9 @@ const Footer = () => {
                             <Stack spacing={0.8}>
                                 {navigationMap.main[2].submenu.map((item) => (
                                     <MuiLink
+                                        component={Link}
                                         key={item.to}
-                                        href={item.to}
+                                        to={item.to}
                                         color="text.secondary"
                                         underline="hover"
                                         sx={{
