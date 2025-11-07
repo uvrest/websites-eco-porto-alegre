@@ -29,7 +29,13 @@ export const phoneNumber = {
     formatted: "(51) 99257-3402",
     raw: "5551992573402",
 }
+
+/** Whatsapp Helpers */
 export const whatsappNumber = "5551992573402";
 const whatsappText = encodeURI("Olá, Gostaria de tirar dúvidas e agendar uma visita técnica");
 export const whatsappLinkURL = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+export const whatsappOpenAction = () => {
+    window.open(whatsappLinkURL, "_blank");
+}
+
 export const emailContact = 'ecopoars@gmail.com';

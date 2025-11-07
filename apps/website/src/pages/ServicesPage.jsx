@@ -1,17 +1,22 @@
 import { useEffect } from "react";
 import { setPageMeta } from "@website/utils/setPageMeta";
+import PageHeader from "@website/layout/PageHeader";
+import ServicesSection from "@website/sections/ServicesSection";
 
 const ServicesPage = () => {
 
     useEffect(() => {
         setPageMeta({
-            title: "Services",
-            description: "Services page Uverest website template."
+            title: "Nossos Serviços",
+            description: "Veja as soluções em hidráulica, caça vazamentos, desentupimentos e muito mais que a Eco Porto Alegre lhe oferece."
         });
     }, []);
 
     return (
-        <>Services page content</>
+        <>
+            <PageHeader pageTitle="Nossos Serviços" overline="Veja as soluções que a Eco Porto Alegre oferece" />
+            <ServicesSection />
+        </>
     )
 }
 

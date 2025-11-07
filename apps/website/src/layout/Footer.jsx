@@ -4,11 +4,12 @@ import { env } from "@website/app/config/env";
 import Brand from "@website/components/brand/Brand";
 import { whatsappLinkURL } from "@website/app/config/contactInfo";
 import { navigationMap } from "@website/app/config/navigationMap";
+import { phoneNumber, emailContact } from "@website/app/config/contactInfo";
 
 const contactInfo = {
     address: "Porto Alegre e Região Metropolitana",
-    phone: "(51) 99999-9999",
-    email: "contato@ecoportoalegre.com.br",
+    phone: phoneNumber.formatted,
+    email: emailContact,
 };
 
 const Footer = () => {
@@ -121,6 +122,7 @@ const Footer = () => {
                                         href={whatsappLinkURL}
                                         color="text.secondary"
                                         underline="hover"
+                                        target="_blank"
                                     >
                                         {contactInfo.phone}
                                     </MuiLink>

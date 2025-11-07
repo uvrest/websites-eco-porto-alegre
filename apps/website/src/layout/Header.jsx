@@ -9,6 +9,7 @@ import { navigationMap } from "@website/app/config/navigationMap";
 import { useAppThemeContext } from "@website/app/providers/AppThemeProvider";
 import Brand from "@website/components/brand/Brand";
 import { useScrolled } from "@uverest/shared/hooks";
+import { whatsappOpenAction } from "@website/app/config/contactInfo";
 
 const Header = () => {
 
@@ -55,7 +56,7 @@ const Header = () => {
                         {!isMobile && <NavbarMenu navItems={navigationMap.main} />}
 
                         {/** CTA Agendar consulta */}
-                        {!isMobile && <Button variant="contained" color="secondary" endIcon={<CalendarTodayRounded />}>Orçamento</Button>}
+                        {!isMobile && <Button variant="contained" color="secondary" endIcon={<CalendarTodayRounded />} onClick={whatsappOpenAction}>Orçamento</Button>}
 
                         {/* Switch e Drawer toggle */}
                         <ColorModeSwitch />

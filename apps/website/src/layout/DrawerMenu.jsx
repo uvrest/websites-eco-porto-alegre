@@ -6,6 +6,7 @@ import { WhatsApp } from "@mui/icons-material";
 import NavigationMenu from "@uverest/design-system/molecules/NavigationMenu";
 import Brand from "@website/components/brand/Brand";
 import { useAppThemeContext } from "@website/app/providers/AppThemeProvider";
+import { whatsappOpenAction } from "@website/app/config/contactInfo";
 
 const DrawerMenu = ({ open, onClose, navItems, anchor = "right" }) => {
 
@@ -133,12 +134,13 @@ const DrawerMenu = ({ open, onClose, navItems, anchor = "right" }) => {
                         color="primary"
                         startIcon={<WhatsApp />}
                         fullWidth
+                        onClick={whatsappOpenAction}
                     >
-                        Fale Conosco
+                        Orçamento
                     </Button>
                 </Box>
 
-                {/* Menu legal horizontal */}
+                {/* Menu legal horizontal 
                 {navItems.legal.length > 0 && (
                     <Box
                         sx={{
@@ -168,6 +170,7 @@ const DrawerMenu = ({ open, onClose, navItems, anchor = "right" }) => {
                         />
                     </Box>
                 )}
+                */}
 
             </Box>
         </Drawer>
