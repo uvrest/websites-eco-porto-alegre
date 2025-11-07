@@ -2,29 +2,34 @@ export const socialData =
 {
     linkedin: {
         label: "Linkedin",
-        href: null,
+        href: "",
     },
     instagram: {
         label: "Instagram",
-        href: "https://instagram.com/",
+        href: "",
     },
     facebook: {
         label: "Facebook",
-        href: null,
+        href: "",
     },
     youtube: {
         label: "Youtube",
-        href: null,
+        href: "",
     },
     x: {
         label: "X",
-        href: null,
+        href: "",
     },
     whatsapp: {
         label: "Whatsapp",
         href: null
     },
 };
-export const whatsappNumber = "5551999999999";
-export const whatsappLinkURL = `https://wa.me/${whatsappNumber}?text=CHANGE-HERE`;
-export const emailContact = 'contact@test.com';
+export const phoneNumber = {
+    formatted: "(51) 99257-3402",
+    raw: "5551992573402",
+}
+export const whatsappNumber = "5551992573402";
+const whatsappText = encodeURI("Olá, Gostaria de tirar dúvidas e agendar uma visita técnica");
+export const whatsappLinkURL = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+export const emailContact = 'ecopoars@gmail.com';
