@@ -113,7 +113,7 @@ const HeroContent = () => (
                 Desentupimentos e Caça Vazamentos
             </Typography>
 
-            <Stack direction="row" spacing={2} mt={3} flexWrap="wrap">
+            <Stack direction="row" spacing={{ xs: 0.5, md: 2 }} mt={3}>
                 <CtaButton
                     label="Orçamento"
                     variant="contained"
@@ -124,7 +124,7 @@ const HeroContent = () => (
                     target="_blank"
                 />
                 <CtaButton
-                    label="Nossos Serviços"
+                    label="Serviços"
                     variant="outlined"
                     size="large"
                     icon={<PlumbingRounded />}

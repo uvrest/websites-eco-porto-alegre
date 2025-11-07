@@ -49,7 +49,7 @@ const Header = () => {
                                 to="/"
                                 sx={{ display: "flex", alignItems: "center" }}
                             >
-                                <Brand height={isMobile ? 70 : 70} src={resolvedMode === 'light' ? logoWt : logoWt} />
+                                <Brand height={isMobile ? 58 : 70} src={resolvedMode === 'light' ? logoWt : logoWt} />
                             </Box>
                         </Box>
 
