@@ -41,8 +41,8 @@ export default {
     },
     dark: {
         mode: 'dark',
-        primary: makeColor('#C42847'),
-        secondary: makeColor('#37517C'),
+        primary: makeColor('#EF5D42'),
+        secondary: makeColor('#1736ff'),
         neutral: makeColor('#2C3449'),
         background: { default: '#000011', paper: '#000022' },
         text: darkText,

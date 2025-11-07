@@ -70,19 +70,52 @@ const HeroVignette = () => (
 );
 
 const HeroContent = () => (
-    <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2, height: "100%", display: "flex", }}>
+    <Container
+        maxWidth="lg"
+        sx={{
+            position: "relative",
+            zIndex: 2,
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-end",
+            py: { xs: 8, md: 12 },
+        }}
+    >
 
-        <Box sx={{ mt: "auto", mb: 8, }}>
-
-            <Typography variant="body1" color="common.white" sx={{ maxWidth: "65%" }}>
-                Soluções rápidas e eficientes em desentupimentos e caça-vazamentos, com equipe especializada e atendimento em toda Porto Alegre e região metropolitana.
+        <Box>
+            <Typography
+                variant="body1"
+                color="common.white"
+                sx={{
+                    maxWidth: { xs: "100%", md: "65%" },
+                    wordBreak: "break-word", // evita overflow
+                    overflowWrap: "break-word", // suporte total
+                    whiteSpace: "normal", // garante quebra em mobile
+                }}
+            >
+                Soluções rápidas e eficientes em desentupimentos e caça-vazamentos, com
+                equipe especializada e atendimento em toda Porto Alegre e região
+                metropolitana.
             </Typography>
-            <Typography variant="h1" component="h2" color="primary.contrastText" sx={{ fontSize: "4.75rem", textTransform: "uppercase" }}>
+
+            <Typography
+                variant="h1"
+                component="h2"
+                color="primary.contrastText"
+                sx={{
+                    fontSize: { xs: "2rem", sm: "3rem", md: "4.75rem" },
+                    textTransform: "uppercase",
+                    lineHeight: 1.1,
+                    mt: 1,
+                }}
+            >
                 Desentupimentos e Caça Vazamentos
             </Typography>
-            <Stack direction="row" spacing={2} mt={2}>
+
+            <Stack direction="row" spacing={2} mt={3} flexWrap="wrap">
                 <CtaButton
-                    label="Faça um Orçamento"
+                    label="Orçamento"
                     variant="contained"
                     color="success"
                     size="large"
@@ -112,7 +145,7 @@ const HeroSection = () => {
 
     return (
         <Box component='section' id="home">
-            <HeroVideo videoPath={bgVideo} height={{ xs: "90dvh", md: "95dvh" }}>
+            <HeroVideo videoPath={bgVideo} height={{ xs: "85dvh", md: "95dvh" }}>
                 <HeroOverlay />
                 <HeroOverlayTopEdge />
                 <HeroOverlayBottomEdge />

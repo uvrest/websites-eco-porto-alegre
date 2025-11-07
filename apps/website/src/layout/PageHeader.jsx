@@ -1,4 +1,4 @@
-import { Box, Container, Typography, useTheme, alpha, Divider } from "@mui/material";
+import { Box, Container, Grid, Typography, useTheme, alpha, Divider } from "@mui/material";
 import Breadcrumbs from "./Breadcrumbs";
 import { useScrolled } from "@uverest/shared/hooks";
 
@@ -31,13 +31,21 @@ const PageHeader = ({ pageTitle, overline }) => {
             <Overlay />
             <Container>
                 <Divider sx={{ mb: 4 }} />
-                <Box display="flex" justifyContent="space-between" alignItems="center">
-                    <Box>
+                <Grid container alignItems="center">
+                    <Grid size={{ xs: 12, md: 8 }}>
                         <Typography variant="overline" color="secondary">{overline}</Typography>
                         <Typography variant="h1" color="primary.contrastText">{pageTitle}</Typography>
-                    </Box>
-                    <Breadcrumbs />
-                </Box>
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 4 }}>
+                        <Breadcrumbs
+                            sx={{
+                                display: "flex",
+                                justifyContent: { xs: "start", md: "end" },
+                                mt: { xs: 3, md: 0 }
+                            }}
+                        />
+                    </Grid>
+                </Grid>
             </Container>
         </Box>
     )

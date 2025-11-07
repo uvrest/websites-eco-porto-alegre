@@ -29,7 +29,7 @@ const ServiceWrapper = ({ children }) => {
             <Grid container spacing={4}>
 
                 {/* Sidebar */}
-                <Grid size={{ xs: 12, md: 3 }}>
+                <Grid size={{ xs: 12, md: 3 }} order={{ xs: 2, md: 1 }}>
                     <Box
                         component="aside"
                         sx={{
@@ -134,7 +134,7 @@ const ServiceWrapper = ({ children }) => {
                 </Grid>
 
                 {/* Conteúdo principal */}
-                <Grid size={{ xs: 12, md: 9 }}>{children}</Grid>
+                <Grid size={{ xs: 12, md: 9 }} order={{ xs: 1, md: 2 }}>{children}</Grid>
 
             </Grid>
         </Box>

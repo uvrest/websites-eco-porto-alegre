@@ -6,6 +6,7 @@ const HeroVideo = ({ videoPath, height = "100dvh", sx, children, ...rest }) => {
             sx={{
                 position: 'relative',
                 width: '100%',
+                maxWidth: '100%',
                 height: height,
                 overflow: 'hidden',
                 py: { xs: 2, md: 0, },

@@ -9,7 +9,7 @@ const unslugify = (slug) => {
         .replace(/\b\w/g, (char) => char.toUpperCase());
 };
 
-const Breadcrumbs = () => {
+const Breadcrumbs = ({ sx, ...rest }) => {
     const location = useLocation();
     const pathnames = location.pathname.split("/").filter(Boolean);
 
@@ -21,7 +21,9 @@ const Breadcrumbs = () => {
                 mb: 1,
                 "& a": { fontWeight: 500 },
                 "& .MuiTypography-root": { fontWeight: 400 },
+                ...sx
             }}
+            {...rest}
         >
             <MuiLink
                 component={RouterLink}
