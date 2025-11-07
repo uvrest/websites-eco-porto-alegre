@@ -7,6 +7,8 @@ import NavigationMenu from "@uverest/design-system/molecules/NavigationMenu";
 import Brand from "@website/components/brand/Brand";
 import { useAppThemeContext } from "@website/app/providers/AppThemeProvider";
 import { whatsappOpenAction } from "@website/app/config/contactInfo";
+import logoWt from "@website/assets/images/logo-wt.png";
+import logoBk from "@website/assets/images/logo-bk.png";
 
 const DrawerMenu = ({ open, onClose, navItems, anchor = "right" }) => {
 
@@ -24,12 +26,12 @@ const DrawerMenu = ({ open, onClose, navItems, anchor = "right" }) => {
                 {/* Logo dentro do Drawer */}
                 <Box sx={{ p: 2 }}>
                     <Box
-                        component="a"
-                        href="/"
+                        component={RouterLink}
+                        to="/"
                         onClick={() => onClose(false)}
                         style={{ textDecoration: "none" }}
                     >
-                        <Brand height={60} src={resolvedMode === 'light' ? "brand/logo-bk.png" : "brand/logo-wt.png"} />
+                        <Brand height={60} src={resolvedMode === 'light' ? logoBk : logoWt} />
                     </Box>
                 </Box>
 
@@ -100,7 +102,7 @@ const DrawerMenu = ({ open, onClose, navItems, anchor = "right" }) => {
                                                         <ListItemButton
                                                             key={item.to}
                                                             component={RouterLink}
-                                                            to={`/${item.to}`}
+                                                            to={`${item.to}`}
                                                             onClick={() => onClose(false)}
                                                             sx={{
                                                                 pl: 4,

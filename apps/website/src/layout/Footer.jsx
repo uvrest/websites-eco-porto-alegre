@@ -6,6 +6,7 @@ import Brand from "@website/components/brand/Brand";
 import { whatsappLinkURL } from "@website/app/config/contactInfo";
 import { navigationMap } from "@website/app/config/navigationMap";
 import { phoneNumber, emailContact } from "@website/app/config/contactInfo";
+import logoBk from "@website/assets/images/logo-bk.png";
 
 const contactInfo = {
     address: "Porto Alegre e Região Metropolitana",
@@ -28,7 +29,7 @@ const Footer = () => {
                         {/* Coluna 1: Logo e descrição */}
                         <Grid size={{ xs: 12, md: 4 }}>
                             <Box>
-                                <Brand height={75} src="brand/logo-bk.png" />
+                                <Brand height={75} src={logoBk} />
                                 <Divider sx={{ my: 2, borderColor: "divider" }} />
                                 <Typography variant="body2" color="text.secondary">
                                     A Eco Porto Alegre oferece soluções completas em desentupimentos, hidráulica,
@@ -84,8 +85,9 @@ const Footer = () => {
                                     .filter((link) => link.label !== "Serviços")
                                     .map((item) => (
                                         <MuiLink
+                                            component={Link}
                                             key={item.to}
-                                            href={item.to}
+                                            to={item.to}
                                             color="text.secondary"
                                             underline="hover"
                                             sx={{

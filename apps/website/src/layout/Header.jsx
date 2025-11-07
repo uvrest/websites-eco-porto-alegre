@@ -10,6 +10,7 @@ import { useAppThemeContext } from "@website/app/providers/AppThemeProvider";
 import Brand from "@website/components/brand/Brand";
 import { useScrolled } from "@uverest/shared/hooks";
 import { whatsappOpenAction } from "@website/app/config/contactInfo";
+import logoWt from "@website/assets/images/logo-wt.png";
 
 const Header = () => {
 
@@ -48,7 +49,7 @@ const Header = () => {
                                 to="/"
                                 sx={{ display: "flex", alignItems: "center" }}
                             >
-                                <Brand height={isMobile ? 70 : 70} src={resolvedMode === 'light' ? "brand/logo-wt.png" : "brand/logo-wt.png"} />
+                                <Brand height={isMobile ? 70 : 70} src={resolvedMode === 'light' ? logoWt : logoWt} />
                             </Box>
                         </Box>
 

@@ -1,6 +1,6 @@
 import { Container, Grid, Typography, Card, CardContent, CardMedia, CardActionArea } from "@mui/material";
 
-const ServiceItem = ({ image, title, description }) => {
+const ServiceItem = ({ image, title, description, action }) => {
     return (
         <Card
             sx={{
@@ -15,7 +15,7 @@ const ServiceItem = ({ image, title, description }) => {
                 },
             }}
         >
-            <CardActionArea>
+            <CardActionArea onClick={() => { action() }}>
                 <CardMedia
                     component="img"
                     height="240"
@@ -40,7 +40,7 @@ const Services = ({ items = [] }) => {
                 {items.map((service) => {
                     return (
                         <Grid key={service.id} size={{ xs: 12, md: 4 }}>
-                            <ServiceItem image={service.image} title={service.title} description={service.description} />
+                            <ServiceItem image={service.image} title={service.title} description={service.description} action={service.action} />
                         </Grid>
                     )
                 })}
